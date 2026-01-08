@@ -52,6 +52,7 @@ func New() *Config {
 	v.BindPFlags(flagSet)
 
 	v.AddConfigPath(".")
+	v.AddConfigPath("../")
 	v.SetConfigName("config")
 	if err := v.ReadInConfig(); err != nil {
 		log.Println("config read error", err)
